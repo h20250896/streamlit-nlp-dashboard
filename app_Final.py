@@ -19,11 +19,6 @@ st.set_page_config(
 
 # File paths - Compatible with Streamlit Cloud
 # Place model files in the same directory as this script
-# MODEL_PATH = Path(__file__).parent
-MODEL_FILE = "./helpfulness_model.pkl"
-VECTORIZER_FILE = "./helpfulness_vectorizer.pkl"
-# MODEL_PATH = Path(r"C:\Users\ankit\Downloads")
-# MODEL_FILE = "helpfulness_model.pkl"
 MODEL_FILE = "./helpfulness_model.pkl"
 VECTORIZER_FILE = "./helpfulness_vectorizer.pkl"
 
@@ -36,7 +31,7 @@ def load_model():
     """Load model and vectorizer with error handling."""
     try:
         if not MODEL_FILE.exists() or not VECTORIZER_FILE.exists():
-            st.error(f"❌ Files not found in {MODEL_PATH}")
+            st.error(f"❌ Files not found in {MODEL_FILE}")
             return None, None
         
         model = joblib.load(MODEL_FILE)
@@ -228,5 +223,4 @@ for idx, (text, score) in enumerate(examples):
 
 st.markdown("---")
 st.caption("🏢 NLP Industry Project | Review Helpfulness Prediction System v1.0")
-
 st.caption("Last Updated: 2024 | Built with Streamlit")
