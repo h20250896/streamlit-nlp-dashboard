@@ -19,8 +19,8 @@ st.set_page_config(
 
 # File paths - Compatible with Streamlit Cloud
 # Place model files in the same directory as this script
-MODEL_FILE = "./helpfulness_model.pkl"
-VECTORIZER_FILE = "./helpfulness_vectorizer.pkl"
+MODEL_FILE = Path("helpfulness_model.pkl")
+VECTORIZER_FILE = Path("helpfulness_vectorizer.pkl")
 
 # ============================================================
 # LOAD MODEL WITH ERROR HANDLING
